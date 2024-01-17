@@ -1,0 +1,14 @@
+<div class="row row-cols-1 row-cols-md-4 g-3">
+    <div *ngFor="let product of products" class="col">
+        <div class="card">
+            <img src="{{product.thumbnail}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <a href="/product-detail/{{product.id}}" class="text-decoration-none"><h4 class="card-title ">{{product.title}}</h4></a>
+                <p class="card-text">{{product.price}}</p>
+                <p>Mô tả: {{product.description}}</p>
+                <p>Thương hiệu: {{product.brand}}</p>
+                <p>Đánh giá: {{product.rating}}</p>
+            </div>
+        </div>
+    </div>
+    
