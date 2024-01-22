@@ -1,0 +1,47 @@
+<main class="main">
+    <div class="main-form-login">
+        <form class="form-login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h4 class="form-title">Đăng nhập</h4>
+            <div class="form-login-group">
+                <label for="#" class="form-label"> Họ tên</label>
+                <input type="text" name="" class="form-login-input" placeholder="Username" formControlName="username" />
+                <div
+                    *ngIf="!loginForm.controls.username?.valid&&(loginForm.controls.username?.dirty||loginForm.controls.username?.touched)">
+                    <pre>Họ tên không được để trống</pre>
+                </div>
+            </div>
+            <div class="form-login-group">
+                <label for="#" class="form-label"> Địa chỉ</label>
+                <input type="text" name="" class="form-login-input" placeholder="Adress" formControlName="adress" />
+            </div>
+            <div class="form-login-group">
+                <label for="#" class="form-label"> Số điện thoại</label>
+                <input type="numer" name="" class="form-login-input" placeholder="Phone" formControlName="phone" />
+                <div
+                    *ngIf="!loginForm.controls.phone?.valid&&(loginForm.controls.phone.dirty||loginForm.controls.phone?.touched)">
+                    <pre>Số điện thoại không được để trống</pre>
+                </div>
+            </div>
+            <div class="form-login-group">
+                <label for="#" class="form-label"> Email</label>
+                <input type="email" name="" class="form-login-input" placeholder="Email" formControlName="email" />
+                <div
+                    *ngIf="!loginForm.controls.email?.valid&&(loginForm.controls.email.dirty||loginForm.controls.email?.touched)">
+                    <pre>Email chưa đúng định dạng</pre>
+                </div>
+            </div>
+            <div class="form-login-group">
+                <label for="#" class="form-label"> CMND</label>
+                <input type="text" name="" class="form-login-input" placeholder="Cmnd" formControlName="cmnd" />
+                <div
+                    *ngIf="!loginForm.controls.cmnd?.valid&&(loginForm.controls.cmnd.dirty||loginForm.controls.cmnd?.touched)">
+                    <pre>CMND không nhỏ hơn 13 ký tự</pre>
+                </div>
+            </div>
+
+            <div class="form-login-group">
+                <button type="submit" class="form-login-btn" ng-disabled="!loginForm.$dirty || (loginForm.$dirty && loginForm.$invalid)" >Đăng nhập</button>
+            </div>
+        </form>
+    </div>
+</main>
